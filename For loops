@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    for (int i = 0; i < 10; i++)
+        cout << i << "";
+
+    cout << endl; //skips a line
+
+    //example 2: prints out a 5-30 count
+    for (int j = 5; j <= 30; j += 5)
+        cout << j << "";
+
+    cout << endl;
+
+    //example 3: prints out a 100 -0 count
+    for (int k = 100; k >= 0; k -= 10)
+        cout << k << "";
+
+    cout << endl;
+
+    //example 4:
+    for (int m = 2; m < 40; m *= 2)
+        cout << m << "";
+    
+    cout << endl; 
+
+    for (int f = 70; f <= 80; f += 1)
+        cout << f << "";
+
+    cout << endl;
+
+    for (int g = 100; g <= 300; g += 20)
+        cout << g << "";
+
+    cout << endl;
+
+    for (int y = 25; y >= -25; y -= 5)
+        cout << y << "";
+
+    cout << endl;
+
+    for (int d = 10000; d >= 10; d /= 5)
+        cout << d << "";
+
+    cout << endl;
+
+}

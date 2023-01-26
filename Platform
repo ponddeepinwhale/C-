@@ -1,0 +1,119 @@
+#include <iostream>
+using namespace std;
+#include <SFML/Graphics.hpp>
+
+int main()
+{
+	sf::RenderWindow renderWindow(sf::VideoMode(800, 800), "Simple Jumper");
+	sf::Event event;
+	sf::Clock clock;
+	const float FPS = 60.0f;
+	renderWindow.setFramerateLimit(FPS);
+
+	//player set up
+	sf::RectangleShape player(sf::Vector2f(30, 30));
+	player.setFillColor(sf::Color::White);
+	float xpos = 25;
+	float ypos = 25;
+	player.setPosition(xpos, ypos);
+	//player velocity
+	float vx = .0;
+	float vy = .0;
+	bool isOnGround = false;
+	bool keys[] = { false, false, false, false };
+	
+	//platform 1 set up
+	sf::RectangleShape platform1(sf::Vector2f(100, 30));
+	platform1.setFillColor(sf::Color::Red);
+	platform1.setPosition(100, 700);
+
+	//add more platforms here
+
+	//Game loop#############################################################
+	while (renderWindow.isOpen()) {
+		while (renderWindow.pollEvent(event)) {
+			if (event.type == sf::Event::EventType::Closed)
+				renderWindow.close();
+
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) keys[2] = true;
+			else keys[2] = false;
+
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) keys[0] = true;
+			else keys[0] = false;
+
+			//add left movement here
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::H)) keys[1] = true;
+			else keys[1] = false;
+		}
+		//physics
+
+		//jumping
+		if (keys[2] == true)
+			if (isOnGround == true) {
+				vy = -15;
+				isOnGround = false;
+			}
+		//right movement
+		if (keys[0] == true)
+			vx = 8;
+		else
+			vx = 0;
+
+		//alter the above code to handle left movement too
+		if (keys[1] == true)
+			vx = -5;
+		else
+			vx = 0;
+
+
+		//Gravity
+		if (ypos + 30 > 800) {
+			isOnGround = true;
+			ypos = 800 - 30;
+		}
+		else
+			isOnGround = false;
+
+		//apply gravity if not on ground
+		if (isOnGround == false) {
+			vy += 1;
+			if (vy > 5)
+				vy = 5;
+		}
+
+		//Friction
+		if (isOnGround == true)
+			vx *= .85;
+		else
+			vx *= .95;
+
+
+		//collide with platform 1
+		if (ypos + 30 >= 700 && ypos <= 700 + 30 && xpos + 30 >= 100 and xpos <= 200) {
+			isOnGround = true;
+			ypos = 700 - 30;
+		}
+		//add more collision checks with the other platforms you make
+
+		//actually move the player
+		xpos += vx;
+		ypos += vy;
+		player.setPosition(xpos, ypos);
+		cout << "Speed is" << vy << endl;
+		//cout << "isOnGround is" << isOnGround << endl;
+		//cout << "Player x and y are" << xpos << "," << ypos <<endl;
+
+		clock.restart();
+		//render section
+		renderWindow.clear();
+		renderWindow.draw(player);
+		renderWindow.draw(platform1);
+		renderWindow.display();
+
+
+	}
+	cout << "Goodbye!" << endl;
+}//end game
+
+
+

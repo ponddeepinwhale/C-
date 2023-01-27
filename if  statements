@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int age;
+    cout << "Please enter age" << endl;
+    cin >> age;
+    if (age < 13)
+        cout << "You are too young to play this game" << endl;
+    if (age >= 13 and age < 18)
+        cout << "Get a parent's permission" << endl;
+    if (age >= 18)
+        cout << "Welcome to the game" << endl;
+
+    char animal;
+    cout << "What is your favorite animal, 'd' for dog, 'c' for cat, 'b' for bird or 'h' for hamster." << endl;
+    cin >> animal;
+    if (animal == 'd')
+        cout << "woof" << endl;
+    else if (animal == 'c')
+        cout << "meow" << endl;
+    else if (animal == 'b')
+        cout << " chirp" << endl;
+    else if (animal == 'h')
+        cout << "*hamster noise*" << endl;
+
+}

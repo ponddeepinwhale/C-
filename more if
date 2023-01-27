@@ -1,0 +1,18 @@
+int main()
+
+{
+    
+    int turtles;
+    cout << "Enter the amount of turtles you have" << endl;
+    cin >> turtles;
+
+    if (turtles < 7)
+        cout << "You don't have enough turtles" << endl;
+    if (turtles == 7)
+        cout << "You have just enough turtles" << endl;
+    if (turtles > 7)
+        cout << "Give me a turtle!" << endl;
+    if (turtles % 7 == 0)
+        cout << "You have a lucky number of turtles" << endl;
+}
+

@@ -1,0 +1,97 @@
+// Yes.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int cookies;
+    cout << "How many cookies do you have?" << endl;
+    cin >> cookies;
+
+    if (cookies < 5)
+        cout << "Have an oatmeal raisin cookie you peasant." << endl;
+    if (cookies >= 5 and cookies <= 10)
+        cout << "A barely passable amount of cookies." << endl;
+    if (cookies > 10)
+        cout << "What an astonishing amount of cookies! Give me one *rabid animal noises*. You die from a cookie monster attack!" << endl;
+
+    char animated;
+    cout << "Who do you like best? (b)art simpson, (s)cooby doo, (r)ick, (d)affy duck, s(a)nji" << endl;
+    cin >> animated;
+
+    if (animated == 'b')
+        cout << "eat my shorts" << endl;
+    if (animated == 's')
+        cout << "Scooby Dooby Doo!" << endl;
+    if (animated == 'r')
+        cout << "Wubba tubba dub dub" << endl;
+    if (animated == 'd')
+        cout << "sufferin succotash" << endl;
+    if (animated == 'a')
+        cout << "The flavors are melting on my tongue!!! (this is a reference not to the anime but to something else you wouldn't get)" << endl;
+
+    char flavor;
+    char flavor2;
+    
+    cout << "Do you want ice cream or candy?" << endl;
+    cin >> flavor;
+
+    cout << "Do you want chocolate or fruit" << endl;
+    cin >> flavor2;
+    if (flavor == 'i')
+        if (flavor2 == 'c')
+            cout << "You get a chocolate sundae!" << endl;
+    if (flavor == 'i')
+        if (flavor2 == 'f')
+            cout << "you get a strawberry blizzard" << endl;
+    if (flavor == 'a')
+        if (flavor2 == 'c')
+            cout << "You get a hershey's bar" << endl;
+    if (flavor == 'a')
+        if (flavor2 == 'f')
+            cout << "You get starbursts" << endl;
+
+
+    char character;
+
+    do {
+        switch (character){
+        case 'r':
+            cout << "Pick a character (r), (s), (a), (b), (d)." << endl;
+            cin >> character;
+            cout << "Wubba tubba dub dub" << endl;
+            break;
+
+        case 's':
+            cout << "Pick a character (r), (s), (a), (b), (d)." << endl;
+            cin >> character;
+            cout << "Scooby Dooby Doo" << endl;
+            break;
+
+        case 'a':
+            cout << "Pick a character(r), (s), (a), (b), (d)." << endl;
+            cin >> character;
+           
+            cout << "The flavors are melting on my tongue!!!" << endl;
+           
+            break;
+        case 'b':
+            cout << "Pick a character(r), (s), (a), (b), (d)." << endl;
+            cin >> character;
+           
+            cout << "Eat my shorts" << endl;
+           
+            break;
+        case 'd':
+            cout << "Pick a character(r), (s), (a), (b), (d)." << endl;
+            cin >> character;
+           
+            cout << "Sufferin Succotash" << endl;
+            break;
+        }
+    } while (character != 'q');
+
+}
+

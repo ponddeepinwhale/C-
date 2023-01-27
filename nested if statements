@@ -1,0 +1,20 @@
+
+	cout << "Do you like platformers ? Y or N" << endl;
+	cin >> input1;
+	cout << "Do you like games tougher than 5 or easier than 5 on a scale of 10? T or E" << endl;
+	cin >> input2;
+
+	if (input1 == 'Y') {
+		if (input2 == 'T')
+			cout << "You should play Mario Bros!" << endl;
+		else if (input2 == 'E')
+			cout << "You should play Kirby's Epic Yarn!" << endl;
+	}
+	else if (input1 == 'N') {
+		if (input2 == 'T')
+			cout << "You should play Dark Souls!" << endl;
+		else if (input2 == 'E')
+			cout << "You should play Minecraft!" << endl;
+	}
+}
+

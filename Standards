@@ -1,0 +1,54 @@
+num = 1
+while num <=10:
+    print(num, end = "")
+    num+=1
+print()
+
+choice = "potato"
+while choice != "quit":
+    print(choice)
+    choice = input("Type in a vegetable. Type quit to quit")
+    
+// REDO switch.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	char character;
+	cout << "Pick a character" << endl;
+	cin >> character;
+	 
+	switch(character) {
+	case 'r':
+		cout << "Wubba lubba dub dub" << endl;
+		break;
+	case 's':
+		cout << "Scooby dooby doo" << endl;
+		break;
+	case 'b':
+		cout << "Eat my shorts" << endl;
+		break;
+	case 'd':
+		cout << "sufferin succotash" << endl;
+		break;
+	case 'k':
+		cout << "The flavors are melting on my tongue ummmm!" << endl;
+
+
+
+	}
+
+	for (int i = 0; i < 3; i++)
+		for (int j = 0; j < 3; j++)
+			cout << endl;
+	cout << "*" << endl;
+
+
+
+
+
+}

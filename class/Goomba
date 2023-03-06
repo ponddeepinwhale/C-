@@ -1,1 +1,76 @@
+#include <iostream>
+using namespace std;
 
+class Goomba {
+private:
+    int xpos;
+    int ypos;
+    bool isAlive;
+    char color;
+   
+public:
+    Goomba();
+    Goomba(int x, int y, char color);
+    void walk();
+    void printInfo();
+    void kill();
+    void setPosition();
+    int CheckIsDead();
+};
+
+int main()
+{
+    Goomba Lary(300, 400, 'b');
+    Goomba Bob;
+    Lary.printInfo();
+    Lary.walk();
+    Lary.printInfo();
+    Bob.printInfo();
+    Lary.kill();
+    Bob.kill();
+    Lary.setPosition();
+    Bob.setPosition();
+    Lary.CheckIsDead();
+    Bob.CheckIsDead();
+
+}
+
+Goomba::Goomba() {
+    xpos = 0;
+    ypos = 0;
+    isAlive = false;
+    color = 'b';
+}
+Goomba::Goomba(int x, int y, char color) {
+    xpos = x;
+    ypos = y;
+    isAlive = true;
+    color = 'r';
+}
+
+void Goomba::kill() {
+    isAlive = false;
+}
+
+void Goomba::setPosition() {
+    xpos = 0;
+    ypos = 0;
+    isAlive = true;
+}
+
+int Goomba::CheckIsDead() {
+    if (isAlive == false)
+        return 0;
+    else
+        return 1;
+}
+void Goomba::walk() { xpos += 1; }
+
+void Goomba::printInfo() {
+    cout << "Hi, I'm a goomba and my position is" << xpos << "," << ypos << endl;
+    cout << "The Goomba is" << color << endl;
+    if (isAlive == true)
+        cout << "I am currently alive." << endl;
+    else
+        cout << "I am currently dead." << endl;
+}

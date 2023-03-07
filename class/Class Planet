@@ -1,0 +1,92 @@
+#include <iostream>
+using namespace std;
+
+class Planet {
+private:
+    double mass;
+    int moons;
+    int rings;
+    bool hasLife;
+    char category;
+
+public:
+    Planet();
+    Planet(double m, int r, int o, char c);
+    void shredMoon();
+    void printInfo();
+    void captureMoon();
+    void growLife();
+    bool getHitByAsteroid();
+};
+
+int main()
+{
+    
+    Planet Venus(4.8, 0, 0, 'r');
+    Planet Mars(6.39, 0, 0, 'r');
+    Planet Saturn;
+    Planet Earth;
+    Venus.printInfo();
+    Saturn.printInfo();
+    Venus.captureMoon();
+    Earth.captureMoon();
+    Mars.captureMoon();
+    Saturn.captureMoon();
+    Earth.printInfo();
+    Mars.printInfo();
+    Venus.getHitByAsteroid();
+    Mars.getHitByAsteroid();
+    Saturn.getHitByAsteroid();
+    Earth.getHitByAsteroid();
+    Venus.growLife();
+    Mars.growLife();
+    Saturn.growLife();
+    Earth.growLife();
+    Venus.shredMoon();
+    Earth.shredMoon();
+    Mars.shredMoon();
+    Saturn.shredMoon();
+    
+
+}
+
+Planet::Planet() {
+    int moons= 1;
+    double mass = 5.9;
+    int rings = 0;
+    hasLife = false;
+    category = 'r';
+}
+Planet::Planet(double m, int r, int o, char c) {
+    moons= o;
+    mass = m;
+    rings = r;
+    hasLife = true;
+    category = c;
+}
+
+bool Planet::getHitByAsteroid() {
+    return hasLife == false;
+}
+
+void Planet::shredMoon() {
+    rings += 1;
+}
+
+void Planet::captureMoon() {
+    moons += 1;
+}
+void Planet::growLife() { 
+    hasLife = true;
+}
+
+void Planet::printInfo() {
+    cout << "Hi, I'm a planet and my mass is" << mass << "." << endl;
+    cout << "I have" << rings << "rings." << endl;
+    cout << "I have" << moons << "moons." << endl;
+    cout << "And I am a" << category << "type planet" << endl;
+    if (hasLife == true)
+        cout << "I am currently alive." << endl;
+    else
+        cout << "I am currently dead." << endl;
+}

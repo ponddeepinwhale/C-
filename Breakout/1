@@ -1,0 +1,109 @@
+#include <SFML/Graphics.hpp>
+
+
+//-------------------------------------------------------------------------------
+class ball {
+private:
+	int fpos;
+	int ypos;
+	sf::RectangleShape rect;
+public:
+	ball(int f, int s;
+	void draw(sf::RenderWindow& window);
+	void move();
+	void collision();
+	int numHits = 0;
+};
+class brick {
+private:
+	int xpos;
+	int ypos;
+	sf::RectangleShape rect;
+public:
+	brick(int x, int y); //constructor
+	void draw(sf::RenderWindow& window);
+};
+
+brick::brick(int x, int y) {
+	xpos = x;
+	ypos = y;
+
+}
+ball::ball(int f, int s) {
+	fpos = f;
+	ypos = s;
+}
+
+void brick::draw(sf::RenderWindow& window) {
+	rect.setSize(sf::Vector2f(100, 50));
+	rect.setFillColor((sf::Color(0, 200, 0)));
+	rect.setPosition(xpos, ypos);
+	window.draw(rect);
+}
+void ball::draw(sf::RenderWindow& window) {
+	rect.setSize(sf::Vector2f(100, 50));
+	rect.setFillColor((sf::Color(0, 200, 0)));
+	rect.setPosition(fpos, ypos);
+	window.draw(rect);
+
+}
+//----------------------------------------------------------------------------
+
+//instantiate some bricks
+brick b1(100, 100);
+brick b2(300, 300);
+brick b3(200, 300);
+brick b4(200, 200);
+brick b5(300, 400);
+brick b6(100, 200);
+brick b7(150, 300);
+brick b8(200, 400);
+brick b9(400, 450);
+brick b10(250, 300);
+
+ball a1(500, 500);
+
+int main()
+{
+	sf::RenderWindow window(sf::VideoMode(800, 800), "Breakout"); //set up screen
+	sf::RectangleShape rect;
+	void collision(int f, int s, int numHits);
+
+	while (window.isOpen())//GAME LOOP--------------------------------
+	{
+		//input section--------------------------------
+		sf::Event event;
+		while (window.pollEvent(event))
+		{
+			if (event.type == sf::Event::Closed)
+				window.close();
+
+		}
+		//physics section------------------------------
+		void move();
+
+		//render section-------------------------------
+		window.clear();
+
+		//draw bricks
+		b1.draw(window);
+		b2.draw(window);
+		b3.draw(window);
+		b4.draw(window);
+		b5.draw(window);
+		b6.draw(window);
+		b7.draw(window);
+		b8.draw(window);
+		b9.draw(window);
+		b10.draw(window);
+		
+
+		window.display(); //flip the buffer
+
+	}//end game loop-------------------------------------------------
+
+	return 0;
+} //end main
+void collision(int f, int s, int numHits) {
+
+}

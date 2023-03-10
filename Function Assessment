@@ -1,0 +1,22 @@
+
+
+#include <iostream>
+using namespace std;
+int caffiene = 0;
+int drinkCoffee(char Size);
+
+int main()
+{
+    int drinkCoffee(char Size);
+}
+
+int drinkCoffee(char Size) {
+    cout << "Enter size" << endl;
+    cin >> Size;
+    if (Size == 'm' or Size == 'M')
+        cout << "Medium Coffee, caffiene 145" << endl;
+    else if (Size == 'L' or Size == 'l')
+        cout << "Large Coffee caffiene 180" << endl;
+    else if (Size == 's' or Size == 'S')
+        cout << "Small Coffee, caffiene 109" << endl;
+}

@@ -1,0 +1,65 @@
+
+#include <iostream>
+using namespace std;
+
+class Pizza {
+private:
+	int toppings;
+	int totalPrice;
+	bool isBaked;
+
+public:
+	Pizza();
+	Pizza(int t, int p);
+	void printInfo();
+	void addTopping();
+	int calculatePrice();
+	bool bake();
+};
+
+int main()
+{
+	Pizza Marg;
+	Pizza Pep;
+	Marg.printInfo();
+	Pep.printInfo();
+	Marg.addTopping();
+	Pep.addTopping();
+	Marg.calculatePrice();
+	Pep.calculatePrice();
+	Marg.bake();
+	Pep.bake();
+}
+
+Pizza::Pizza() {
+	int toppings = 0;
+	int totalPrice = 0;
+	bool isBaked = false;
+}
+
+Pizza::Pizza(int t, int p) {
+	toppings = t;
+	totalPrice = p;
+	isBaked = true;
+}
+
+void Pizza::addTopping() {
+	toppings += 1;
+	totalPrice += 1;
+}
+
+bool Pizza::bake() {
+	return isBaked == true;
+}
+
+int Pizza::calculatePrice() {
+	toppings * 2 + 10;
+	return toppings;
+	totalPrice += toppings;
+}
+void Pizza::printInfo() {
+	cout << "You ordered a pizza with" << toppings << isBaked << endl;
+	cout << "So, your total price today is" << totalPrice << endl;
+	cout << "Thank you for being a customer of Pizzeria Locale!" << endl;
+}
+

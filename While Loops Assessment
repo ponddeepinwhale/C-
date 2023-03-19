@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+int item = 6;
+char noises;
+
+
+  
+int main() {
+
+  while (item <= 22);
+  for (int item = 6; item <= 23; item += 2)
+    cout << item << "";
+    
+
+  while (noises != 'c')
+  cout << "Enter a letter" << endl;
+  cin >> noises;
+  
+}

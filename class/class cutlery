@@ -1,0 +1,70 @@
+#include <iostream>
+using namespace std;
+
+class cutlery {
+private:
+	int type;
+	bool isClean;
+
+public:
+	void printInfo();
+	cutlery();
+	cutlery(int t, bool c);
+	void use();
+	void wash();
+
+};
+
+int main()
+{
+	cutlery alice;
+	cutlery bent(2, true);
+	cutlery carrie(0, false);
+	cutlery dire(1, true);
+	alice.printInfo();
+	bent.printInfo();
+	carrie.printInfo();
+	dire.printInfo();
+	alice.use();
+	bent.use();
+	carrie.use();
+	dire.use();
+	alice.wash();
+	bent.wash();
+	carrie.wash();
+	dire.wash();
+}
+
+cutlery::cutlery() {
+	type = rand() % 3;
+	isClean = true;
+}
+
+cutlery::cutlery(int t, bool c) {
+	type = t;
+	isClean = c;
+
+}
+
+void cutlery::use() {
+	isClean = false;
+}
+
+void cutlery::wash() {
+	isClean = true;
+
+}
+
+void cutlery::printInfo() {
+	if (type == 0)
+		cout << "I am fork" << endl;
+	else if (type == 1)
+		cout << "I am spoon" << endl;
+	else if (type == 2)
+		cout << "I am knife" << endl;
+	
+	if (isClean == true)
+		cout << "I am a clean piece of cutlery" << endl;
+	else
+		cout << "I am a dirty piece of cutlery" << endl;
+}
